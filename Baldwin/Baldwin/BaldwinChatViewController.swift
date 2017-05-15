@@ -64,7 +64,6 @@ class BaldwinChatViewController: JSQMessagesViewController {
     // Helper Method for getting an avatar for a specific User.
     func getAvatar(_ id: String) -> JSQMessagesAvatarImage{
         
-        print("User id:::: \(id)")
         let user = User(rawValue: id)!
         
         switch user {
@@ -100,7 +99,10 @@ class BaldwinChatViewController: JSQMessagesViewController {
     }
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
+        self.navigationItem.title = "Baldwin"
         
         // Display a sample conversation (use this for reference with Baldwin)
         messages = makeFakeBaldwinCoversation()
