@@ -123,7 +123,7 @@ class BaldwinChatViewController: JSQMessagesViewController {
         }
         else {
             // Bubbles with tails
-            incomingBubble = JSQMessagesBubbleImageFactory().incomingMessagesBubbleImage(with: UIColor(hex: "c1c0c4"))
+            incomingBubble = JSQMessagesBubbleImageFactory().incomingMessagesBubbleImage(with: UIColor(hex: "b7b6ba"))
             outgoingBubble = JSQMessagesBubbleImageFactory().outgoingMessagesBubbleImage(with: UIColor(hex: "EFD469"))
         }
         
