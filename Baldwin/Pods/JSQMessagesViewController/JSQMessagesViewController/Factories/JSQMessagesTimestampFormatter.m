@@ -55,11 +55,11 @@
         NSMutableParagraphStyle *paragraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
         paragraphStyle.alignment = NSTextAlignmentCenter;
         
-        _dateTextAttributes = @{ NSFontAttributeName : [UIFont preferredFontForTextStyle:UIFontTextStyleBody],
+        _dateTextAttributes = @{ NSFontAttributeName : [UIFont preferredFontForTextStyle:UIFontTextStyleCaption2],
                                  NSForegroundColorAttributeName : color,
                                  NSParagraphStyleAttributeName : paragraphStyle };
         
-        _timeTextAttributes = @{ NSFontAttributeName : [UIFont preferredFontForTextStyle:UIFontTextStyleBody],
+        _timeTextAttributes = @{ NSFontAttributeName : [UIFont preferredFontForTextStyle:UIFontTextStyleCaption2],
                                  NSForegroundColorAttributeName : color,
                                  NSParagraphStyleAttributeName : paragraphStyle };
     }

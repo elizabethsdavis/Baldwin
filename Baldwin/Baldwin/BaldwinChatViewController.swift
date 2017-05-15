@@ -58,7 +58,8 @@ class BaldwinChatViewController: JSQMessagesViewController {
     
     let AvatarUser = JSQMessagesAvatarImageFactory().avatarImage(withUserInitials: "ME", backgroundColor: .lightGray, textColor: .white, font: UIFont.systemFont(ofSize: 12))
     
-    let AvatarBaldwin = JSQMessagesAvatarImageFactory().avatarImage(withUserInitials: "BLD", backgroundColor: UIColor(hex: "FFF855"), textColor: .black, font: UIFont.systemFont(ofSize: 12))
+    let AvatarBaldwin = JSQMessagesAvatarImageFactory().avatarImage(with: #imageLiteral(resourceName: "brain girl"))
+    
     
     // Helper Method for getting an avatar for a specific User.
     func getAvatar(_ id: String) -> JSQMessagesAvatarImage{
