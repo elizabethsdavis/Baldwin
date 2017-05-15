@@ -9,28 +9,7 @@
 import UIKit
 import JSQMessagesViewController
 
-extension UIColor {
-    convenience init(hex: String) {
-        let scanner = Scanner(string: hex)
-        scanner.scanLocation = 0
-        
-        var rgbValue: UInt64 = 0
-        
-        scanner.scanHexInt64(&rgbValue)
-        
-        let r = (rgbValue & 0xff0000) >> 16
-        let g = (rgbValue & 0xff00) >> 8
-        let b = rgbValue & 0xff
-        
-        self.init(
-            red: CGFloat(r) / 0xff,
-            green: CGFloat(g) / 0xff,
-            blue: CGFloat(b) / 0xff, alpha: 1
-        )
-    }
-}
-
-class BaldwinChatViewController: JSQMessagesViewController {
+class SampleChatViewController: JSQMessagesViewController {
     var messages = [JSQMessage]()
     let defaults = UserDefaults.standard
     var conversation: Conversation?
@@ -38,71 +17,11 @@ class BaldwinChatViewController: JSQMessagesViewController {
     var outgoingBubble: JSQMessagesBubbleImage!
     fileprivate var displayName: String!
     
-    // User Enum to make it easyier to work with.
-    enum User: String {
-        case You        = "001"
-        case Baldwin    = "002"
-    }
-    
-    // Helper Function to get usernames for a secific User.
-    func getName(_ user: User) -> String{
-        switch user {
-        case .You:
-            return "You"
-        case .Baldwin:
-            return "Baldwin"
-        }
-    }
-    
-    // Create an avatar with Image
-    
-    let AvatarUser = JSQMessagesAvatarImageFactory().avatarImage(withUserInitials: "ME", backgroundColor: .lightGray, textColor: .white, font: UIFont.systemFont(ofSize: 12))
-    
-    let AvatarBaldwin = JSQMessagesAvatarImageFactory().avatarImage(withUserInitials: "BLD", backgroundColor: UIColor(hex: "FFF855"), textColor: .black, font: UIFont.systemFont(ofSize: 12))
-    
-    // Helper Method for getting an avatar for a specific User.
-    func getAvatar(_ id: String) -> JSQMessagesAvatarImage{
-        
-        print("User id:::: \(id)")
-        let user = User(rawValue: id)!
-        
-        switch user {
-        case .You:
-            return AvatarUser
-        case .Baldwin:
-            return AvatarBaldwin
-        }
-    }
-    
-    func makeFakeBaldwinCoversation() -> [JSQMessage] {
-        
-        var conversation = [JSQMessage]()
-        
-        let message1 = JSQMessage(senderId: User.You.rawValue, displayName: getName(User.You), text: "Hey, can I touch your hair?")
-        let message2 = JSQMessage(senderId: User.Baldwin.rawValue, displayName: getName(User.Baldwin), text: "You can't, because I'm a chat bot. But if I weren't, I would prefer you not to.")
-        let message3 = JSQMessage(senderId: User.You.rawValue, displayName: getName(User.You), text: "Why? 🙁")
-        let message4 = JSQMessage(senderId: User.Baldwin.rawValue, displayName: getName(User.Baldwin), text: "While the act of touching a person's hair may be a minimal annoyance to them at best, black people have experienced a history of mistreatment relating to their hair.")
-        let message5 = JSQMessage(senderId: User.You.rawValue, displayName: getName(User.You), text: "What, how?")
-        let message6 = JSQMessage(senderId: User.You.rawValue, displayName: getName(User.You), text: "Isn't that an exaggeration?")
-        let message7 = JSQMessage(senderId: User.Baldwin.rawValue, displayName: getName(User.Baldwin), text: "Well, for one, black hair is not considered acceptable to mainstream beauty culture, adopting nicknames such as 'nappy', 'unkempt', or 'uncivilized'. Black people often even experience workplace discrimination for the way they wear their hair.")
-        let message8 = JSQMessage(senderId: User.You.rawValue, displayName: getName(User.You), text: "Oh word?")
-        let message9 = JSQMessage(senderId: User.Baldwin.rawValue, displayName: getName(User.Baldwin), text: "Yea. And that is to say, there is a history of undervaluing, mistreating, and even fetishising black hair for its unique qualities. I feel this every time someone asks to touch my hair, and it's insulting.")
-        let message10 = JSQMessage(senderId: User.Baldwin.rawValue, displayName: getName(User.Baldwin), text: "People ask to touch my hair a LOT.")
-        let message11 = JSQMessage(senderId: User.You.rawValue, displayName: getName(User.You), text: "Dang.")
-        let message12 = JSQMessage(senderId: User.You.rawValue, displayName: getName(User.You), text: "Thanks Baldwin")
-        let message13 = JSQMessage(senderId: User.You.rawValue, displayName: getName(User.You), text: "Never thought about it like that")
-        let message14 = JSQMessage(senderId: User.Baldwin.rawValue, displayName: getName(User.Baldwin), text: "👍🏾")
-        
-        conversation = [message1, message2, message3, message4, message5, message6, message7, message8, message9, message10, message11, message12, message13, message14]
-        return conversation
-    
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Display a sample conversation (use this for reference with Baldwin)
-        messages = makeFakeBaldwinCoversation()
+        messages = makeNormalConversation()
         
         // Setup navigation
         // setupBackButton() // remove demo back button
@@ -145,7 +64,7 @@ class BaldwinChatViewController: JSQMessagesViewController {
         collectionView?.collectionViewLayout.springinessEnabled = false
         
         automaticallyScrollsToMostRecentMessage = true
-        
+
         self.collectionView?.reloadData()
         self.collectionView?.layoutIfNeeded()
     }
@@ -159,7 +78,148 @@ class BaldwinChatViewController: JSQMessagesViewController {
     }
     
     func receiveMessagePressed(_ sender: UIBarButtonItem) {
-        print("TODO: Open Settings")
+        /**
+         *  DEMO ONLY
+         *
+         *  The following is simply to simulate received messages for the demo.
+         *  Do not actually do this.
+         */
+        
+        /**
+         *  Show the typing indicator to be shown
+         */
+        self.showTypingIndicator = !self.showTypingIndicator
+        
+        /**
+         *  Scroll to actually view the indicator
+         */
+        self.scrollToBottom(animated: true)
+        
+        /**
+         *  Copy last sent message, this will be the new "received" message
+         */
+        var copyMessage = self.messages.last?.copy()
+        
+        if (copyMessage == nil) {
+            copyMessage = JSQMessage(senderId: AvatarIdJobs, displayName: getName(User.Jobs), text: "First received!")
+        }
+            
+        var newMessage:JSQMessage!
+        var newMediaData:JSQMessageMediaData!
+        var newMediaAttachmentCopy:AnyObject?
+        
+        if (copyMessage! as AnyObject).isMediaMessage() {
+            /**
+             *  Last message was a media message
+             */
+            let copyMediaData = (copyMessage! as AnyObject).media
+            
+            switch copyMediaData {
+            case is JSQPhotoMediaItem:
+                let photoItemCopy = (copyMediaData as! JSQPhotoMediaItem).copy() as! JSQPhotoMediaItem
+                photoItemCopy.appliesMediaViewMaskAsOutgoing = false
+                
+                newMediaAttachmentCopy = UIImage(cgImage: photoItemCopy.image!.cgImage!)
+                
+                /**
+                 *  Set image to nil to simulate "downloading" the image
+                 *  and show the placeholder view5017
+                 */
+                photoItemCopy.image = nil;
+                
+                newMediaData = photoItemCopy
+            case is JSQLocationMediaItem:
+                let locationItemCopy = (copyMediaData as! JSQLocationMediaItem).copy() as! JSQLocationMediaItem
+                locationItemCopy.appliesMediaViewMaskAsOutgoing = false
+                newMediaAttachmentCopy = locationItemCopy.location!.copy() as AnyObject?
+                
+                /**
+                 *  Set location to nil to simulate "downloading" the location data
+                 */
+                locationItemCopy.location = nil;
+                
+                newMediaData = locationItemCopy;
+            case is JSQVideoMediaItem:
+                let videoItemCopy = (copyMediaData as! JSQVideoMediaItem).copy() as! JSQVideoMediaItem
+                videoItemCopy.appliesMediaViewMaskAsOutgoing = false
+                newMediaAttachmentCopy = (videoItemCopy.fileURL! as NSURL).copy() as AnyObject?
+                
+                /**
+                 *  Reset video item to simulate "downloading" the video
+                 */
+                videoItemCopy.fileURL = nil;
+                videoItemCopy.isReadyToPlay = false;
+                
+                newMediaData = videoItemCopy;
+            case is JSQAudioMediaItem:
+                let audioItemCopy = (copyMediaData as! JSQAudioMediaItem).copy() as! JSQAudioMediaItem
+                audioItemCopy.appliesMediaViewMaskAsOutgoing = false
+                newMediaAttachmentCopy = (audioItemCopy.audioData! as NSData).copy() as AnyObject?
+                
+                /**
+                 *  Reset audio item to simulate "downloading" the audio
+                 */
+                audioItemCopy.audioData = nil;
+                
+                newMediaData = audioItemCopy;
+            default:
+                assertionFailure("Error: This Media type was not recognised")
+            }
+            
+            newMessage = JSQMessage(senderId: AvatarIdJobs, displayName: getName(User.Jobs), media: newMediaData)
+        }
+        else {
+            /**
+             *  Last message was a text message
+             */
+            
+            newMessage = JSQMessage(senderId: AvatarIdJobs, displayName: getName(User.Jobs), text: (copyMessage! as AnyObject).text)
+        }
+        
+        /**
+         *  Upon receiving a message, you should:
+         *
+         *  1. Play sound (optional)
+         *  2. Add new JSQMessageData object to your data source
+         *  3. Call `finishReceivingMessage`
+         */
+        
+        self.messages.append(newMessage)
+        self.finishReceivingMessage(animated: true)
+        
+        if newMessage.isMediaMessage {
+            /**
+             *  Simulate "downloading" media
+             */
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(1 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) {
+                /**
+                 *  Media is "finished downloading", re-display visible cells
+                 *
+                 *  If media cell is not visible, the next time it is dequeued the view controller will display its new attachment data
+                 *
+                 *  Reload the specific item, or simply call `reloadData`
+                 */
+                
+                switch newMediaData {
+                case is JSQPhotoMediaItem:
+                    (newMediaData as! JSQPhotoMediaItem).image = newMediaAttachmentCopy as? UIImage
+                    self.collectionView!.reloadData()
+                case is JSQLocationMediaItem:
+                    (newMediaData as! JSQLocationMediaItem).setLocation(newMediaAttachmentCopy as? CLLocation, withCompletionHandler: {
+                        self.collectionView!.reloadData()
+                    })
+                case is JSQVideoMediaItem:
+                    (newMediaData as! JSQVideoMediaItem).fileURL = newMediaAttachmentCopy as? URL
+                    (newMediaData as! JSQVideoMediaItem).isReadyToPlay = true
+                    self.collectionView!.reloadData()
+                case is JSQAudioMediaItem:
+                    (newMediaData as! JSQAudioMediaItem).audioData = newMediaAttachmentCopy as? Data
+                    self.collectionView!.reloadData()
+                default:
+                    assertionFailure("Error: This Media type was not recognised")
+                }
+            }
+        }
     }
     
     // MARK: JSQMessagesViewController method overrides
@@ -269,11 +329,11 @@ class BaldwinChatViewController: JSQMessagesViewController {
     //MARK: JSQMessages CollectionView DataSource
     
     override func senderId() -> String {
-        return User.You.rawValue
+        return User.Wozniak.rawValue
     }
     
     override func senderDisplayName() -> String {
-        return getName(.You)
+        return getName(.Wozniak)
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -326,7 +386,7 @@ class BaldwinChatViewController: JSQMessagesViewController {
         if message.senderId == self.senderId() {
             return nil
         }
-        
+
         return NSAttributedString(string: message.senderDisplayName)
     }
     
@@ -347,7 +407,7 @@ class BaldwinChatViewController: JSQMessagesViewController {
         
         return 0.0
     }
-    
+
     override func collectionView(_ collectionView: JSQMessagesCollectionView, layout collectionViewLayout: JSQMessagesCollectionViewFlowLayout, heightForMessageBubbleTopLabelAt indexPath: IndexPath) -> CGFloat {
         
         /**

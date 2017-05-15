@@ -10,7 +10,8 @@
 		4F352507E51B35232E83F0DE /* Pods_BaldwinTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7435E4C3103048075718DC6 /* Pods_BaldwinTests.framework */; };
 		74B080CAAE4DB7E8D281F165 /* Pods_Baldwin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D95E1E0571C020BA1E7AC86 /* Pods_Baldwin.framework */; };
 		ADC729A399DD2F095045AA00 /* Pods_Baldwin_BaldwinTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E8C707FC4DA76D1E1896B68 /* Pods_Baldwin_BaldwinTests.framework */; };
-		C2C3B6431ECA49E200D30363 /* BaldwinChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C3B63F1ECA49E200D30363 /* BaldwinChatViewController.swift */; };
+		C292E8361ECA553500AFD36B /* BaldwinChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C292E8351ECA553500AFD36B /* BaldwinChatViewController.swift */; };
+		C2C3B6431ECA49E200D30363 /* SampleChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C3B63F1ECA49E200D30363 /* SampleChatViewController.swift */; };
 		C2C3B6441ECA49E200D30363 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C3B6401ECA49E200D30363 /* Conversation.swift */; };
 		C2C3B6451ECA49E200D30363 /* DemoConversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C3B6411ECA49E200D30363 /* DemoConversation.swift */; };
 		C2C3B6481ECA4AFE00D30363 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C3B6471ECA4AFE00D30363 /* SettingsTableViewController.swift */; };
@@ -41,7 +42,8 @@
 		62C777E8271D853382B37442 /* Pods-Baldwin-BaldwinTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Baldwin-BaldwinTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Baldwin-BaldwinTests/Pods-Baldwin-BaldwinTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B7435E4C3103048075718DC6 /* Pods_BaldwinTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BaldwinTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C292E8341ECA4E6000AFD36B /* jsq_messages_sample.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = jsq_messages_sample.m4a; sourceTree = "<group>"; };
-		C2C3B63F1ECA49E200D30363 /* BaldwinChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaldwinChatViewController.swift; sourceTree = "<group>"; };
+		C292E8351ECA553500AFD36B /* BaldwinChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaldwinChatViewController.swift; sourceTree = "<group>"; };
+		C2C3B63F1ECA49E200D30363 /* SampleChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleChatViewController.swift; sourceTree = "<group>"; };
 		C2C3B6401ECA49E200D30363 /* Conversation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
 		C2C3B6411ECA49E200D30363 /* DemoConversation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoConversation.swift; sourceTree = "<group>"; };
 		C2C3B6471ECA4AFE00D30363 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +103,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C292E8371ECA554A00AFD36B /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				C292E8341ECA4E6000AFD36B /* jsq_messages_sample.m4a */,
+				C2C3B63F1ECA49E200D30363 /* SampleChatViewController.swift */,
+				C2C3B6401ECA49E200D30363 /* Conversation.swift */,
+				C2C3B6411ECA49E200D30363 /* DemoConversation.swift */,
+				C2C3B6471ECA4AFE00D30363 /* SettingsTableViewController.swift */,
+			);
+			name = Demo;
+			sourceTree = "<group>";
+		};
 		C2D2AFBE1ECA2564005ADB18 = {
 			isa = PBXGroup;
 			children = (
@@ -124,16 +138,10 @@
 		C2D2AFC91ECA2564005ADB18 /* Baldwin */ = {
 			isa = PBXGroup;
 			children = (
-				C2C3B63F1ECA49E200D30363 /* BaldwinChatViewController.swift */,
-				C2C3B6401ECA49E200D30363 /* Conversation.swift */,
-				C2C3B6411ECA49E200D30363 /* DemoConversation.swift */,
-				C2C3B6471ECA4AFE00D30363 /* SettingsTableViewController.swift */,
 				C2D2AFCE1ECA2564005ADB18 /* Main.storyboard */,
-				C292E8341ECA4E6000AFD36B /* jsq_messages_sample.m4a */,
-				C2D2AFD11ECA2564005ADB18 /* Assets.xcassets */,
-				C2D2AFD31ECA2564005ADB18 /* LaunchScreen.storyboard */,
+				C292E8351ECA553500AFD36B /* BaldwinChatViewController.swift */,
+				C292E8371ECA554A00AFD36B /* Demo */,
 				C2D2AFEA1ECA26D4005ADB18 /* Supporting Files */,
-				C2D2AFD61ECA2564005ADB18 /* Info.plist */,
 			);
 			path = Baldwin;
 			sourceTree = "<group>";
@@ -150,7 +158,10 @@
 		C2D2AFEA1ECA26D4005ADB18 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C2D2AFD11ECA2564005ADB18 /* Assets.xcassets */,
+				C2D2AFD31ECA2564005ADB18 /* LaunchScreen.storyboard */,
 				C2D2AFCA1ECA2564005ADB18 /* AppDelegate.swift */,
+				C2D2AFD61ECA2564005ADB18 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -360,9 +371,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C292E8361ECA553500AFD36B /* BaldwinChatViewController.swift in Sources */,
 				C2C3B6451ECA49E200D30363 /* DemoConversation.swift in Sources */,
 				C2C3B6441ECA49E200D30363 /* Conversation.swift in Sources */,
-				C2C3B6431ECA49E200D30363 /* BaldwinChatViewController.swift in Sources */,
+				C2C3B6431ECA49E200D30363 /* SampleChatViewController.swift in Sources */,
 				C2D2AFCB1ECA2564005ADB18 /* AppDelegate.swift in Sources */,
 				C2C3B6481ECA4AFE00D30363 /* SettingsTableViewController.swift in Sources */,
 			);
