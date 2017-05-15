@@ -9,8 +9,12 @@
 /* Begin PBXBuildFile section */
 		4F352507E51B35232E83F0DE /* Pods_BaldwinTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7435E4C3103048075718DC6 /* Pods_BaldwinTests.framework */; };
 		74B080CAAE4DB7E8D281F165 /* Pods_Baldwin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D95E1E0571C020BA1E7AC86 /* Pods_Baldwin.framework */; };
+		ADC729A399DD2F095045AA00 /* Pods_Baldwin_BaldwinTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E8C707FC4DA76D1E1896B68 /* Pods_Baldwin_BaldwinTests.framework */; };
+		C2C3B6431ECA49E200D30363 /* BaldwinChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C3B63F1ECA49E200D30363 /* BaldwinChatViewController.swift */; };
+		C2C3B6441ECA49E200D30363 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C3B6401ECA49E200D30363 /* Conversation.swift */; };
+		C2C3B6451ECA49E200D30363 /* DemoConversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C3B6411ECA49E200D30363 /* DemoConversation.swift */; };
+		C2C3B6481ECA4AFE00D30363 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C3B6471ECA4AFE00D30363 /* SettingsTableViewController.swift */; };
 		C2D2AFCB1ECA2564005ADB18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D2AFCA1ECA2564005ADB18 /* AppDelegate.swift */; };
-		C2D2AFCD1ECA2564005ADB18 /* BaldwinChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D2AFCC1ECA2564005ADB18 /* BaldwinChatViewController.swift */; };
 		C2D2AFD01ECA2564005ADB18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2D2AFCE1ECA2564005ADB18 /* Main.storyboard */; };
 		C2D2AFD21ECA2564005ADB18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2D2AFD11ECA2564005ADB18 /* Assets.xcassets */; };
 		C2D2AFD51ECA2564005ADB18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2D2AFD31ECA2564005ADB18 /* LaunchScreen.storyboard */; };
@@ -31,11 +35,18 @@
 		1284645462A9B5215B02D085 /* Pods-Baldwin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Baldwin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Baldwin/Pods-Baldwin.debug.xcconfig"; sourceTree = "<group>"; };
 		14F53E20FF6D982155AB9DB4 /* Pods-BaldwinTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaldwinTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BaldwinTests/Pods-BaldwinTests.debug.xcconfig"; sourceTree = "<group>"; };
 		203BEE8C9905A016DF23ECB3 /* Pods-Baldwin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Baldwin.release.xcconfig"; path = "Pods/Target Support Files/Pods-Baldwin/Pods-Baldwin.release.xcconfig"; sourceTree = "<group>"; };
+		3E8C707FC4DA76D1E1896B68 /* Pods_Baldwin_BaldwinTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Baldwin_BaldwinTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		58E37BAF9214EB26B78396A7 /* Pods-Baldwin-BaldwinTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Baldwin-BaldwinTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Baldwin-BaldwinTests/Pods-Baldwin-BaldwinTests.release.xcconfig"; sourceTree = "<group>"; };
 		5D95E1E0571C020BA1E7AC86 /* Pods_Baldwin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Baldwin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		62C777E8271D853382B37442 /* Pods-Baldwin-BaldwinTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Baldwin-BaldwinTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Baldwin-BaldwinTests/Pods-Baldwin-BaldwinTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B7435E4C3103048075718DC6 /* Pods_BaldwinTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BaldwinTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C292E8341ECA4E6000AFD36B /* jsq_messages_sample.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = jsq_messages_sample.m4a; sourceTree = "<group>"; };
+		C2C3B63F1ECA49E200D30363 /* BaldwinChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaldwinChatViewController.swift; sourceTree = "<group>"; };
+		C2C3B6401ECA49E200D30363 /* Conversation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
+		C2C3B6411ECA49E200D30363 /* DemoConversation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoConversation.swift; sourceTree = "<group>"; };
+		C2C3B6471ECA4AFE00D30363 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		C2D2AFC71ECA2564005ADB18 /* Baldwin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Baldwin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2D2AFCA1ECA2564005ADB18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C2D2AFCC1ECA2564005ADB18 /* BaldwinChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaldwinChatViewController.swift; sourceTree = "<group>"; };
 		C2D2AFCF1ECA2564005ADB18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C2D2AFD11ECA2564005ADB18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C2D2AFD41ECA2564005ADB18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -60,6 +71,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F352507E51B35232E83F0DE /* Pods_BaldwinTests.framework in Frameworks */,
+				ADC729A399DD2F095045AA00 /* Pods_Baldwin_BaldwinTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +85,8 @@
 				203BEE8C9905A016DF23ECB3 /* Pods-Baldwin.release.xcconfig */,
 				14F53E20FF6D982155AB9DB4 /* Pods-BaldwinTests.debug.xcconfig */,
 				FF2EA86A649ED11EDE5FFD23 /* Pods-BaldwinTests.release.xcconfig */,
+				62C777E8271D853382B37442 /* Pods-Baldwin-BaldwinTests.debug.xcconfig */,
+				58E37BAF9214EB26B78396A7 /* Pods-Baldwin-BaldwinTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -82,6 +96,7 @@
 			children = (
 				5D95E1E0571C020BA1E7AC86 /* Pods_Baldwin.framework */,
 				B7435E4C3103048075718DC6 /* Pods_BaldwinTests.framework */,
+				3E8C707FC4DA76D1E1896B68 /* Pods_Baldwin_BaldwinTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -109,8 +124,12 @@
 		C2D2AFC91ECA2564005ADB18 /* Baldwin */ = {
 			isa = PBXGroup;
 			children = (
-				C2D2AFCC1ECA2564005ADB18 /* BaldwinChatViewController.swift */,
+				C2C3B63F1ECA49E200D30363 /* BaldwinChatViewController.swift */,
+				C2C3B6401ECA49E200D30363 /* Conversation.swift */,
+				C2C3B6411ECA49E200D30363 /* DemoConversation.swift */,
+				C2C3B6471ECA4AFE00D30363 /* SettingsTableViewController.swift */,
 				C2D2AFCE1ECA2564005ADB18 /* Main.storyboard */,
+				C292E8341ECA4E6000AFD36B /* jsq_messages_sample.m4a */,
 				C2D2AFD11ECA2564005ADB18 /* Assets.xcassets */,
 				C2D2AFD31ECA2564005ADB18 /* LaunchScreen.storyboard */,
 				C2D2AFEA1ECA26D4005ADB18 /* Supporting Files */,
@@ -210,6 +229,7 @@
 			knownRegions = (
 				en,
 				Base,
+				he,
 			);
 			mainGroup = C2D2AFBE1ECA2564005ADB18;
 			productRefGroup = C2D2AFC81ECA2564005ADB18 /* Products */;
@@ -255,7 +275,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BaldwinTests/Pods-BaldwinTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Baldwin-BaldwinTests/Pods-Baldwin-BaldwinTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		68E94ABC20DA37A25FA23A36 /* [CP] Copy Pods Resources */ = {
@@ -285,7 +305,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BaldwinTests/Pods-BaldwinTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Baldwin-BaldwinTests/Pods-Baldwin-BaldwinTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7FE1B06B91FE317C843531D6 /* [CP] Embed Pods Frameworks */ = {
@@ -340,8 +360,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2D2AFCD1ECA2564005ADB18 /* BaldwinChatViewController.swift in Sources */,
+				C2C3B6451ECA49E200D30363 /* DemoConversation.swift in Sources */,
+				C2C3B6441ECA49E200D30363 /* Conversation.swift in Sources */,
+				C2C3B6431ECA49E200D30363 /* BaldwinChatViewController.swift in Sources */,
 				C2D2AFCB1ECA2564005ADB18 /* AppDelegate.swift in Sources */,
+				C2C3B6481ECA4AFE00D30363 /* SettingsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,7 +529,7 @@
 		};
 		C2D2AFE81ECA2564005ADB18 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 14F53E20FF6D982155AB9DB4 /* Pods-BaldwinTests.debug.xcconfig */;
+			baseConfigurationReference = 62C777E8271D853382B37442 /* Pods-Baldwin-BaldwinTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -522,7 +545,7 @@
 		};
 		C2D2AFE91ECA2564005ADB18 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FF2EA86A649ED11EDE5FFD23 /* Pods-BaldwinTests.release.xcconfig */;
+			baseConfigurationReference = 58E37BAF9214EB26B78396A7 /* Pods-Baldwin-BaldwinTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -555,6 +578,7 @@
 				C2D2AFE61ECA2564005ADB18 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C2D2AFE71ECA2564005ADB18 /* Build configuration list for PBXNativeTarget "BaldwinTests" */ = {
 			isa = XCConfigurationList;
@@ -563,6 +587,7 @@
 				C2D2AFE91ECA2564005ADB18 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

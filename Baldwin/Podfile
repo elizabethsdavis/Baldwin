@@ -5,11 +5,10 @@ target 'Baldwin' do
   use_frameworks!
 
   # Pods for Baldwin
-  pod 'JSQMessagesViewController'
+  pod 'JSQMessagesViewController', :git => 'https://github.com/jessesquires/JSQMessagesViewController.git', :branch => 'develop'
 
   target 'BaldwinTests' do
-    inherit! :search_paths
-    # Pods for testing
+    pod 'JSQMessagesViewController', :git => 'https://github.com/jessesquires/JSQMessagesViewController.git', :branch => 'develop'
   end
 
 end
