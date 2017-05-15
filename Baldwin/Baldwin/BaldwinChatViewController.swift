@@ -141,6 +141,7 @@ class BaldwinChatViewController: JSQMessagesViewController {
         
         // Show Button to simulate incoming messages
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage.jsq_defaultTypingIndicator(), style: .plain, target: self, action: #selector(receiveMessagePressed))
+        self.navigationItem.rightBarButtonItem?.tintColor = UIColor(hex: "b7b6ba")
         
         // This is a beta feature that mostly works but to make things more stable it is diabled.
         collectionView?.collectionViewLayout.springinessEnabled = false
