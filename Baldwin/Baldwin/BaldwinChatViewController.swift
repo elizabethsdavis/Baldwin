@@ -56,7 +56,7 @@ class BaldwinChatViewController: JSQMessagesViewController {
     
     // Create an avatar with Image
     
-    let AvatarUser = JSQMessagesAvatarImageFactory().avatarImage(withUserInitials: "ME", backgroundColor: .lightGray, textColor: .white, font: UIFont.systemFont(ofSize: 12))
+    let AvatarUser = JSQMessagesAvatarImageFactory().avatarImage(withUserInitials: "ME", backgroundColor: UIColor(hex: "EFD469"), textColor: .white, font: UIFont.systemFont(ofSize: 12))
     
     let AvatarBaldwin = JSQMessagesAvatarImageFactory().avatarImage(with: #imageLiteral(resourceName: "brain girl"))
     
@@ -118,13 +118,13 @@ class BaldwinChatViewController: JSQMessagesViewController {
         
         if defaults.bool(forKey: Setting.removeBubbleTails.rawValue) {
             // Make taillessBubbles
-            incomingBubble = JSQMessagesBubbleImageFactory(bubble: UIImage.jsq_bubbleCompactTailless(), capInsets: UIEdgeInsets.zero, layoutDirection: UIApplication.shared.userInterfaceLayoutDirection).incomingMessagesBubbleImage(with: UIColor.jsq_messageBubbleBlue())
+            incomingBubble = JSQMessagesBubbleImageFactory(bubble: UIImage.jsq_bubbleCompactTailless(), capInsets: UIEdgeInsets.zero, layoutDirection: UIApplication.shared.userInterfaceLayoutDirection).incomingMessagesBubbleImage(with: UIColor(hex: "FEEC66"))
             outgoingBubble = JSQMessagesBubbleImageFactory(bubble: UIImage.jsq_bubbleCompactTailless(), capInsets: UIEdgeInsets.zero, layoutDirection: UIApplication.shared.userInterfaceLayoutDirection).outgoingMessagesBubbleImage(with: UIColor.lightGray)
         }
         else {
             // Bubbles with tails
-            incomingBubble = JSQMessagesBubbleImageFactory().incomingMessagesBubbleImage(with: UIColor.jsq_messageBubbleBlue())
-            outgoingBubble = JSQMessagesBubbleImageFactory().outgoingMessagesBubbleImage(with: UIColor.lightGray)
+            incomingBubble = JSQMessagesBubbleImageFactory().incomingMessagesBubbleImage(with: UIColor(hex: "c1c0c4"))
+            outgoingBubble = JSQMessagesBubbleImageFactory().outgoingMessagesBubbleImage(with: UIColor(hex: "EFD469"))
         }
         
         /**
@@ -159,8 +159,15 @@ class BaldwinChatViewController: JSQMessagesViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    /* Send a message to Baldwin and receive a response
+     * TODO: implement when sending a message to Baldwin
+     */
+    func sendMessage() {
+        // TODO: See, 'receiveMessagePressed' implementation in the 'SampleChatViewController' file
+    }
+    
     func receiveMessagePressed(_ sender: UIBarButtonItem) {
-        print("TODO: Open Settings")
+        print("TODO: Implement settings VC")
     }
     
     // MARK: JSQMessagesViewController method overrides
