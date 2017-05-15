@@ -1,7 +1,9 @@
 PODS:
+  - Alamofire (4.4.0)
   - JSQMessagesViewController (7.3.4)
 
 DEPENDENCIES:
+  - Alamofire
   - JSQMessagesViewController (from `https://github.com/jessesquires/JSQMessagesViewController.git`, branch `develop`)
 
 EXTERNAL SOURCES:
@@ -15,8 +17,9 @@ CHECKOUT OPTIONS:
     :git: https://github.com/jessesquires/JSQMessagesViewController.git
 
 SPEC CHECKSUMS:
+  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
   JSQMessagesViewController: c11b9e77372ab72c45c67311f6da7342e32df1e8
 
-PODFILE CHECKSUM: 53b768e8346f9fb2bf65af9f1a03155df8f7f3ca
+PODFILE CHECKSUM: ff8bcea42d177479fbb2f51b70c2a892abbd9e0b
 
 COCOAPODS: 1.1.1

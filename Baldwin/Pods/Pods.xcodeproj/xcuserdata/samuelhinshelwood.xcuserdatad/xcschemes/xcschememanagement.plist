@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Alamofire.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>JSQMessagesViewController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,12 +27,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>19B348E4D164B43D068A21E2A2DBD274</key>
+		<key>887F6ED8B3DE8679D1AF4AD4B2E8166D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>370199DBCC0AF79D0F21D668C7F04A9D</key>
+		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>971B1EB0E9C9FD00EF51EFDFB3B6743E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

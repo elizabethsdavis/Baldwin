@@ -6,6 +6,7 @@ target 'Baldwin' do
 
   # Pods for Baldwin
   pod 'JSQMessagesViewController', :git => 'https://github.com/jessesquires/JSQMessagesViewController.git', :branch => 'develop'
+  pod 'Alamofire'
 
   target 'BaldwinTests' do
     pod 'JSQMessagesViewController', :git => 'https://github.com/jessesquires/JSQMessagesViewController.git', :branch => 'develop'
