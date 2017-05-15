@@ -1,0 +1,15 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '9.0'
+
+target 'Baldwin' do
+  use_frameworks!
+
+  # Pods for Baldwin
+  pod 'JSQMessagesViewController'
+
+  target 'BaldwinTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end

@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F352507E51B35232E83F0DE /* Pods_BaldwinTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7435E4C3103048075718DC6 /* Pods_BaldwinTests.framework */; };
+		74B080CAAE4DB7E8D281F165 /* Pods_Baldwin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D95E1E0571C020BA1E7AC86 /* Pods_Baldwin.framework */; };
 		C2D2AFCB1ECA2564005ADB18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D2AFCA1ECA2564005ADB18 /* AppDelegate.swift */; };
-		C2D2AFCD1ECA2564005ADB18 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D2AFCC1ECA2564005ADB18 /* ViewController.swift */; };
+		C2D2AFCD1ECA2564005ADB18 /* BaldwinChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D2AFCC1ECA2564005ADB18 /* BaldwinChatViewController.swift */; };
 		C2D2AFD01ECA2564005ADB18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2D2AFCE1ECA2564005ADB18 /* Main.storyboard */; };
 		C2D2AFD21ECA2564005ADB18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2D2AFD11ECA2564005ADB18 /* Assets.xcassets */; };
 		C2D2AFD51ECA2564005ADB18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2D2AFD31ECA2564005ADB18 /* LaunchScreen.storyboard */; };
@@ -26,9 +28,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1284645462A9B5215B02D085 /* Pods-Baldwin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Baldwin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Baldwin/Pods-Baldwin.debug.xcconfig"; sourceTree = "<group>"; };
+		14F53E20FF6D982155AB9DB4 /* Pods-BaldwinTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaldwinTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BaldwinTests/Pods-BaldwinTests.debug.xcconfig"; sourceTree = "<group>"; };
+		203BEE8C9905A016DF23ECB3 /* Pods-Baldwin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Baldwin.release.xcconfig"; path = "Pods/Target Support Files/Pods-Baldwin/Pods-Baldwin.release.xcconfig"; sourceTree = "<group>"; };
+		5D95E1E0571C020BA1E7AC86 /* Pods_Baldwin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Baldwin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7435E4C3103048075718DC6 /* Pods_BaldwinTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BaldwinTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2D2AFC71ECA2564005ADB18 /* Baldwin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Baldwin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2D2AFCA1ECA2564005ADB18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C2D2AFCC1ECA2564005ADB18 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C2D2AFCC1ECA2564005ADB18 /* BaldwinChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaldwinChatViewController.swift; sourceTree = "<group>"; };
 		C2D2AFCF1ECA2564005ADB18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C2D2AFD11ECA2564005ADB18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C2D2AFD41ECA2564005ADB18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +43,7 @@
 		C2D2AFDB1ECA2564005ADB18 /* BaldwinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BaldwinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2D2AFDF1ECA2564005ADB18 /* BaldwinTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaldwinTests.swift; sourceTree = "<group>"; };
 		C2D2AFE11ECA2564005ADB18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF2EA86A649ED11EDE5FFD23 /* Pods-BaldwinTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaldwinTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaldwinTests/Pods-BaldwinTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74B080CAAE4DB7E8D281F165 /* Pods_Baldwin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,18 +59,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F352507E51B35232E83F0DE /* Pods_BaldwinTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		16DA1104D12E3E632FBFD6BE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1284645462A9B5215B02D085 /* Pods-Baldwin.debug.xcconfig */,
+				203BEE8C9905A016DF23ECB3 /* Pods-Baldwin.release.xcconfig */,
+				14F53E20FF6D982155AB9DB4 /* Pods-BaldwinTests.debug.xcconfig */,
+				FF2EA86A649ED11EDE5FFD23 /* Pods-BaldwinTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A465C3AB1C630FD2B1D7B545 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5D95E1E0571C020BA1E7AC86 /* Pods_Baldwin.framework */,
+				B7435E4C3103048075718DC6 /* Pods_BaldwinTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C2D2AFBE1ECA2564005ADB18 = {
 			isa = PBXGroup;
 			children = (
 				C2D2AFC91ECA2564005ADB18 /* Baldwin */,
 				C2D2AFDE1ECA2564005ADB18 /* BaldwinTests */,
 				C2D2AFC81ECA2564005ADB18 /* Products */,
+				16DA1104D12E3E632FBFD6BE /* Pods */,
+				A465C3AB1C630FD2B1D7B545 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,11 +109,11 @@
 		C2D2AFC91ECA2564005ADB18 /* Baldwin */ = {
 			isa = PBXGroup;
 			children = (
-				C2D2AFCA1ECA2564005ADB18 /* AppDelegate.swift */,
-				C2D2AFCC1ECA2564005ADB18 /* ViewController.swift */,
+				C2D2AFCC1ECA2564005ADB18 /* BaldwinChatViewController.swift */,
 				C2D2AFCE1ECA2564005ADB18 /* Main.storyboard */,
 				C2D2AFD11ECA2564005ADB18 /* Assets.xcassets */,
 				C2D2AFD31ECA2564005ADB18 /* LaunchScreen.storyboard */,
+				C2D2AFEA1ECA26D4005ADB18 /* Supporting Files */,
 				C2D2AFD61ECA2564005ADB18 /* Info.plist */,
 			);
 			path = Baldwin;
@@ -96,6 +128,14 @@
 			path = BaldwinTests;
 			sourceTree = "<group>";
 		};
+		C2D2AFEA1ECA26D4005ADB18 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C2D2AFCA1ECA2564005ADB18 /* AppDelegate.swift */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +143,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C2D2AFE41ECA2564005ADB18 /* Build configuration list for PBXNativeTarget "Baldwin" */;
 			buildPhases = (
+				D1289F6E8DED55B7F91EEA8E /* [CP] Check Pods Manifest.lock */,
 				C2D2AFC31ECA2564005ADB18 /* Sources */,
 				C2D2AFC41ECA2564005ADB18 /* Frameworks */,
 				C2D2AFC51ECA2564005ADB18 /* Resources */,
+				7FE1B06B91FE317C843531D6 /* [CP] Embed Pods Frameworks */,
+				68E94ABC20DA37A25FA23A36 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -120,9 +163,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C2D2AFE71ECA2564005ADB18 /* Build configuration list for PBXNativeTarget "BaldwinTests" */;
 			buildPhases = (
+				8509AB163B3AA9036782C847 /* [CP] Check Pods Manifest.lock */,
 				C2D2AFD71ECA2564005ADB18 /* Sources */,
 				C2D2AFD81ECA2564005ADB18 /* Frameworks */,
 				C2D2AFD91ECA2564005ADB18 /* Resources */,
+				49C775E69F51F7861B4C567B /* [CP] Embed Pods Frameworks */,
+				78FE1BAEF2587759546C7135 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -196,12 +242,105 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		49C775E69F51F7861B4C567B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BaldwinTests/Pods-BaldwinTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		68E94ABC20DA37A25FA23A36 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Baldwin/Pods-Baldwin-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		78FE1BAEF2587759546C7135 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BaldwinTests/Pods-BaldwinTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7FE1B06B91FE317C843531D6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Baldwin/Pods-Baldwin-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8509AB163B3AA9036782C847 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D1289F6E8DED55B7F91EEA8E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C2D2AFC31ECA2564005ADB18 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2D2AFCD1ECA2564005ADB18 /* ViewController.swift in Sources */,
+				C2D2AFCD1ECA2564005ADB18 /* BaldwinChatViewController.swift in Sources */,
 				C2D2AFCB1ECA2564005ADB18 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,6 +476,7 @@
 		};
 		C2D2AFE51ECA2564005ADB18 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1284645462A9B5215B02D085 /* Pods-Baldwin.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 49ZR57MW8W;
@@ -351,6 +491,7 @@
 		};
 		C2D2AFE61ECA2564005ADB18 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 203BEE8C9905A016DF23ECB3 /* Pods-Baldwin.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 49ZR57MW8W;
@@ -365,6 +506,7 @@
 		};
 		C2D2AFE81ECA2564005ADB18 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14F53E20FF6D982155AB9DB4 /* Pods-BaldwinTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -380,6 +522,7 @@
 		};
 		C2D2AFE91ECA2564005ADB18 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF2EA86A649ED11EDE5FFD23 /* Pods-BaldwinTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
