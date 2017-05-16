@@ -8,6 +8,7 @@
 
 import UIKit
 import JSQMessagesViewController
+import Alamofire
 
 extension UIColor {
     convenience init(hex: String) {
@@ -165,7 +166,19 @@ class BaldwinChatViewController: JSQMessagesViewController {
     /* Send a message to Baldwin and receive a response
      * TODO: implement when sending a message to Baldwin
      */
-    func sendMessage() {
+    func sendToBaldwinServer(messageText text: String) {
+        Alamofire.request("http://localhost:8000/chat").responseJSON(completionHandler: { response in
+            
+            print(response.request)  // original URL request
+            print(response.response) // HTTP URL response
+            print(response.data)     // server data
+            print(response.result)   // result of response serialization
+            
+            if let JSON = response.result.value {
+                print("JSON: \(JSON)")
+            }
+        })
+        
         // TODO: See, 'receiveMessagePressed' implementation in the 'SampleChatViewController' file
     }
     
@@ -185,6 +198,7 @@ class BaldwinChatViewController: JSQMessagesViewController {
         
         let message = JSQMessage(senderId: senderId, senderDisplayName: senderDisplayName, date: date, text: text)
         self.messages.append(message)
+        sendToBaldwinServer(messageText: text)
         self.finishSendingMessage(animated: true)
     }
     
