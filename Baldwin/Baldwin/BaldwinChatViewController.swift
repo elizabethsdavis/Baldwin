@@ -164,22 +164,24 @@ class BaldwinChatViewController: JSQMessagesViewController {
     }
     
     /* Send a message to Baldwin and receive a response
-     * TODO: implement when sending a message to Baldwin
+     * TODO: incorporate message text into request end-to-end
      */
     func sendToBaldwinServer(messageText text: String) {
         Alamofire.request("http://localhost:8000/chat").responseJSON(completionHandler: { response in
             
-            print(response.request)  // original URL request
-            print(response.response) // HTTP URL response
-            print(response.data)     // server data
-            print(response.result)   // result of response serialization
+            print("Request: \(response.request as Any)")  // original URL request
+            print("Response: \(response.response as Any)") // HTTP URL response
+            print("Data: \(response.data as Any)")     // server data
+            print("Result: \(response.result)")   // result of response serialization
             
-            if let JSON = response.result.value {
+            
+            if let JSON = response.result.value as? Dictionary<String, String> {
                 print("JSON: \(JSON)")
+                print(JSON["message"]!)
             }
         })
         
-        // TODO: See, 'receiveMessagePressed' implementation in the 'SampleChatViewController' file
+        // TODO: Also see, 'receiveMessagePressed' implementation in the 'SampleChatViewController' file
     }
     
     func receiveMessagePressed(_ sender: UIBarButtonItem) {
