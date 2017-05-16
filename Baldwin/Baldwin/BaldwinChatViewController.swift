@@ -163,11 +163,15 @@ class BaldwinChatViewController: JSQMessagesViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    func makeBaldwinMessage(messageText message: String) -> JSQMessage {
+        return JSQMessage(senderId: User.Baldwin.rawValue, displayName: getName(User.Baldwin), text: message)
+    }
+    
     /* Send a message to Baldwin and receive a response
      * TODO: incorporate message text into request end-to-end
      */
     func sendToBaldwinServer(messageText text: String) {
-        Alamofire.request("http://localhost:8000/chat").responseJSON(completionHandler: { response in
+        Alamofire.request("http://localhost:8000/chat").responseJSON(completionHandler: { [weak weakSelf = self] response in
             
             print("Request: \(response.request as Any)")  // original URL request
             print("Response: \(response.response as Any)") // HTTP URL response
@@ -177,7 +181,11 @@ class BaldwinChatViewController: JSQMessagesViewController {
             
             if let JSON = response.result.value as? Dictionary<String, String> {
                 print("JSON: \(JSON)")
-                print(JSON["message"]!)
+                let baldwinsResponse = JSON["message"]!
+                
+                // TODO: insert delay (and/or typing indicator) before Baldwin's response
+                weakSelf?.messages.append((weakSelf?.makeBaldwinMessage(messageText: baldwinsResponse))!)
+                weakSelf?.finishSendingMessage(animated: true)
             }
         })
         
