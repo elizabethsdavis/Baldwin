@@ -71,7 +71,6 @@ if(cluster.isMaster) {
 	  console.log('We (worker ' + process.pid + ') are live on ' + port);
 	});
 
-	// Test
 
 
 }
