@@ -53,9 +53,23 @@ if(cluster.isMaster) {
 
 		// Sample response. 
 		// This should come from the Baldwin Ai backend for end-to-end integration.
+
+		messages = [
+
+			"Hey! I'm Baldwin ✊🏾", 
+			"Yo!", 
+			"Sorry, I don't understand that yet. #justwaitonit", 
+			"Hm. Wonder what you just said 🤔", 
+			"Hope your day is well.", 
+			"👐🏾",
+			"Hey, what's up, hello!"
+		];
+
+		var message = messages[Math.floor(Math.random() * messages.length)]; // random message
+
 		response.contentType('application/json');
 		var BaldwinUtterance = { 
-			"message": "Hey! I'm Baldwin ✊🏾",
+			"message": message,
 			"misc": "This is some fake text representing additional info." 
 		};
 		var json = JSON.stringify(BaldwinUtterance);
