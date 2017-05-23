@@ -33,7 +33,7 @@ if(cluster.isMaster) {
 	const bodyParser     = require('body-parser');
 	const app            = express();
 
-	const port = 8000;
+	const port = process.env.PORT || 8000; // PORT supplied by Heroku dyno
 	app.use(bodyParser.json());
 
 

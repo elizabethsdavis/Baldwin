@@ -171,7 +171,7 @@ class BaldwinChatViewController: JSQMessagesViewController {
      * TODO: incorporate message text into request end-to-end
      */
     func sendToBaldwinServer(messageText text: String) {
-        Alamofire.request("http://localhost:8000/chat").responseJSON(completionHandler: { [weak weakSelf = self] response in
+        Alamofire.request("http://thebaldwinai.herokuapp.com/chat").responseJSON(completionHandler: { [weak weakSelf = self] response in
             
             print("Request: \(response.request as Any)")  // original URL request
             print("Response: \(response.response as Any)") // HTTP URL response
