@@ -32,6 +32,8 @@ if(cluster.isMaster) {
 	const MongoClient    = require('mongodb').MongoClient;
 	const bodyParser     = require('body-parser');
 	const app            = express();
+	const sys 			 = require('util');
+	const exec 			 = require('child_process').exec;
 
 	const port = process.env.PORT || 8000; // PORT supplied by Heroku dyno
 	app.use(bodyParser.json());
@@ -79,13 +81,37 @@ if(cluster.isMaster) {
 
 	// MARK: - Express API
 	app.get('/', function(request, response){
-		response.send("Hey World!");
+
+		var data = response.data;
+		
+		var child;
+
+		console.log('running program...');
+		child = exec('cd ../practice && python e2e.py --query "' + request.params.message + '"',
+			function (error, stdout, stderr) {
+				var result = JSON.parse(stdout);
+				console.log(result);
+				response.send(result);
+				if (stderr !== null) {
+					console.log('stderr: ' + stderr);
+					// response.status(400).send(stderr);
+				}
+				console.log('stdout: ' + stdout);
+				if (error !== null) {
+					console.log('exec error: ' + error);
+					// response.status(400).send(error);
+				}
+				
+				
+			});
+		// response.send("Hey World!");
+
 	});
 
 	app.get('/chat', handleChatMessage);
 
 
-	app.listen(port, () => {
+	app.listen(port, function () {
 	  console.log('We (worker ' + process.pid + ') are live on ' + port);
 	});
 
