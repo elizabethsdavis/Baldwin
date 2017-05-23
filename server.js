@@ -86,7 +86,7 @@ if(cluster.isMaster) {
 		
 		var child;
 
-		child = exec('python ../practice/e2e.py --query "black lives matter"',
+		child = exec('cd ../practice && python e2e.py --query "black lives matter"',
 			function (error, stdout, stderr) {
 				if (stderr !== null) {
 					console.log('stderr: ' + stderr);
