@@ -32,7 +32,7 @@ if(cluster.isMaster) {
 	const MongoClient    = require('mongodb').MongoClient;
 	const bodyParser     = require('body-parser');
 	const app            = express();
-	const sys 			 = require('sys');
+	const sys 			 = require('util');
 	const exec 			 = require('child_process').exec;
 
 	const port = process.env.PORT || 8000; // PORT supplied by Heroku dyno
