@@ -79,13 +79,31 @@ if(cluster.isMaster) {
 
 	// MARK: - Express API
 	app.get('/', function(request, response){
+
+		var data = response.data;
+
+		exec('python e2e.py --query “' + request.message + '"',
+			function (error, stdout, stderr) {
+				if (stderr !== null) {
+					console.log('stderr: ' + stderr);
+					response.status(400).send(stderr);
+				}
+				console.log('stdout: ' + stdout);
+				if (error !== null) {
+					console.log('exec error: ' + error);
+					response.status(400).send(error);
+				}
+				var result = JSON.parse(stdout);
+				response.send(result[text]);
+			});
 		response.send("Hey World!");
+
 	});
 
 	app.get('/chat', handleChatMessage);
 
 
-	app.listen(port, () => {
+	app.listen(port, function () {
 	  console.log('We (worker ' + process.pid + ') are live on ' + port);
 	});
 
