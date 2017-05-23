@@ -100,7 +100,7 @@ if(cluster.isMaster) {
 				}
 				var result = JSON.parse(stdout);
 				console.log(result);
-				response.send(result[text]);
+				response.send(result["text"]);
 			});
 		// response.send("Hey World!");
 
