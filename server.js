@@ -4,7 +4,7 @@ const MongoClient    = require('mongodb').MongoClient;
 const bodyParser     = require('body-parser');
 const app            = express();
 
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 8000; // PORT supplied by Heroku dyno
 app.use(bodyParser.json());
 
 
