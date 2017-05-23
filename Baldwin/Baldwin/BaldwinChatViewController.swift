@@ -171,16 +171,26 @@ class BaldwinChatViewController: JSQMessagesViewController {
      * TODO: incorporate message text into request end-to-end
      */
     func sendToBaldwinServer(messageText text: String) {
-        Alamofire.request("http://thebaldwinai.herokuapp.com/chat").responseJSON(completionHandler: { [weak weakSelf = self] response in
+        let manager = Alamofire.SessionManager.default
+        manager.session.configuration.timeoutIntervalForRequest = TimeInterval(500000);
+        manager.session.configuration.timeoutIntervalForResource = TimeInterval(500000);
+        manager.request("http://10.31.49.76:8000?message="+text).responseJSON(completionHandler: { [weak weakSelf = self] response in
+            
+            
+            
+            print(response);
+        
+            print("RESPONSE: ", response);
             
             print("Request: \(response.request as Any)")  // original URL request
             print("Response: \(response.response as Any)") // HTTP URL response
             print("Data: \(response.data as Any)")     // server data
+            print("Actual Data: \(String(describing: response.data))")
             print("Result: \(response.result)")   // result of response serialization
             
             
             if let JSON = response.result.value as? Dictionary<String, String> {
-                print("JSON: \(JSON)")
+                print("JSON: \(JSON)");
                 let baldwinsResponse = JSON["message"]!
                 
                 // TODO: insert delay (and/or typing indicator) before Baldwin's response
