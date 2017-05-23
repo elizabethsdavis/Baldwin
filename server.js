@@ -91,7 +91,7 @@ if(cluster.isMaster) {
 			function (error, stdout, stderr) {
 				var result = JSON.parse(stdout);
 				console.log(result);
-				response.send();
+				response.send(result);
 				if (stderr !== null) {
 					console.log('stderr: ' + stderr);
 					// response.status(400).send(stderr);
