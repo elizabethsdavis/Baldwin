@@ -8,6 +8,7 @@
 
 import UIKit
 import JSQMessagesViewController
+import Alamofire
 
 extension UIColor {
     convenience init(hex: String) {
@@ -162,11 +163,33 @@ class BaldwinChatViewController: JSQMessagesViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    func makeBaldwinMessage(messageText message: String) -> JSQMessage {
+        return JSQMessage(senderId: User.Baldwin.rawValue, displayName: getName(User.Baldwin), text: message)
+    }
+    
     /* Send a message to Baldwin and receive a response
-     * TODO: implement when sending a message to Baldwin
+     * TODO: incorporate message text into request end-to-end
      */
-    func sendMessage() {
-        // TODO: See, 'receiveMessagePressed' implementation in the 'SampleChatViewController' file
+    func sendToBaldwinServer(messageText text: String) {
+        Alamofire.request("http://thebaldwinai.herokuapp.com/chat").responseJSON(completionHandler: { [weak weakSelf = self] response in
+            
+            print("Request: \(response.request as Any)")  // original URL request
+            print("Response: \(response.response as Any)") // HTTP URL response
+            print("Data: \(response.data as Any)")     // server data
+            print("Result: \(response.result)")   // result of response serialization
+            
+            
+            if let JSON = response.result.value as? Dictionary<String, String> {
+                print("JSON: \(JSON)")
+                let baldwinsResponse = JSON["message"]!
+                
+                // TODO: insert delay (and/or typing indicator) before Baldwin's response
+                weakSelf?.messages.append((weakSelf?.makeBaldwinMessage(messageText: baldwinsResponse))!)
+                weakSelf?.finishSendingMessage(animated: true)
+            }
+        })
+        
+        // TODO: Also see, 'receiveMessagePressed' implementation in the 'SampleChatViewController' file
     }
     
     func receiveMessagePressed(_ sender: UIBarButtonItem) {
@@ -185,6 +208,7 @@ class BaldwinChatViewController: JSQMessagesViewController {
         
         let message = JSQMessage(senderId: senderId, senderDisplayName: senderDisplayName, date: date, text: text)
         self.messages.append(message)
+        sendToBaldwinServer(messageText: text)
         self.finishSendingMessage(animated: true)
     }
     
