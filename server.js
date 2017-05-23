@@ -81,8 +81,11 @@ if(cluster.isMaster) {
 	app.get('/', function(request, response){
 
 		var data = response.data;
+		var sys = require('sys');
+		var exec = require('child_process').exec;
+		var child;
 
-		exec('python e2e.py --query “' + request.message + '"',
+		child = exec('python e2e.py --query “' + request.message + '"',
 			function (error, stdout, stderr) {
 				if (stderr !== null) {
 					console.log('stderr: ' + stderr);
@@ -96,7 +99,7 @@ if(cluster.isMaster) {
 				var result = JSON.parse(stdout);
 				response.send(result[text]);
 			});
-		response.send("Hey World!");
+		// response.send("Hey World!");
 
 	});
 
