@@ -1,22 +1,3 @@
-Skip to content
-This repository
-Search
-Pull requests
-Issues
-Marketplace
-Gist
- @samhinsh
- Sign out
- Unwatch 2
-  Unstar 1
-  Fork 0 elizabethsdavis/Baldwin
- Code  Issues 0  Pull requests 0  Projects 0  Wiki Insights 
-Branch: integrating-api Find file Copy pathBaldwin/server.js
-08f879d  9 minutes ago
- Samuel Hinshelwood Changed client chat endpoint. Using server workers
-0 contributors
-RawBlameHistory     
-76 lines (55 sloc)  2.11 KB
 var cluster = require('cluster');
 
 // Master Process
@@ -83,6 +64,10 @@ if(cluster.isMaster) {
 
 
 	// MARK: - Express API
+	app.get('/', function(request, response){
+		response.send("Hey World!");
+	});
+
 	app.get('/chat', handleChatMessage);
 
 
@@ -93,5 +78,3 @@ if(cluster.isMaster) {
 
 
 }
-Contact GitHub API Training Shop Blog About
-© 2017 GitHub, Inc. Terms Privacy Security Status Help
