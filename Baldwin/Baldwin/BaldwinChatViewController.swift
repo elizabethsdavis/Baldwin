@@ -96,7 +96,7 @@ class BaldwinChatViewController: JSQMessagesViewController {
         
         conversation = [message1, message2, message3, message4, message5, message6, message7, message8, message9, message10, message11, message12, message13, message14]
         return conversation
-    
+        
     }
     
     override func viewDidLoad() {
@@ -179,7 +179,7 @@ class BaldwinChatViewController: JSQMessagesViewController {
             
             
             print(response);
-        
+            
             print("RESPONSE: ", response);
             
             print("Request: \(response.request as Any)")  // original URL request
