@@ -32,6 +32,8 @@ if(cluster.isMaster) {
 	const MongoClient    = require('mongodb').MongoClient;
 	const bodyParser     = require('body-parser');
 	const app            = express();
+	const sys 			 = require('sys');
+	const exec 			 = require('child_process').exec;
 
 	const port = process.env.PORT || 8000; // PORT supplied by Heroku dyno
 	app.use(bodyParser.json());
@@ -81,8 +83,7 @@ if(cluster.isMaster) {
 	app.get('/', function(request, response){
 
 		var data = response.data;
-		var sys = require('sys');
-		var exec = require('child_process').exec;
+		
 		var child;
 
 		child = exec('python e2e.py --query “' + request.message + '"',
