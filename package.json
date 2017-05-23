@@ -1,0 +1,31 @@
+{
+  "name": "baldwin",
+  "version": "1.0.0",
+  "description": "Black AI Language-Driven Web Interface",
+  "main": "index.js",
+  "scripts": {
+    "test": "test.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elizabethsdavis/Baldwin.git"
+  },
+  "keywords": [
+    "baldwin"
+  ],
+  "author": "The Baldwin Team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elizabethsdavis/Baldwin/issues"
+  },
+  "homepage": "https://github.com/elizabethsdavis/Baldwin#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "mongodb": "^2.2.26"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
