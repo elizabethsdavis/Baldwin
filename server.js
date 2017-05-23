@@ -4,7 +4,7 @@ const MongoClient    = require('mongodb').MongoClient;
 const bodyParser     = require('body-parser');
 const app            = express();
 
-const port = 8000;
+const port = process.env.PORT || 8000;
 app.use(bodyParser.json());
 
 
@@ -37,6 +37,11 @@ function handleChatMessage(request, response) {
 
 
 // MARK: - Express API
+app.get('/', function(request, response) {
+   response.send("Hello World");
+   //response.render('pages/index');
+});
+
 app.get('/chat', handleChatMessage);
 
 
