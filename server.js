@@ -89,18 +89,20 @@ if(cluster.isMaster) {
 		console.log('running program...');
 		child = exec('cd ../practice && python e2e.py --query "black lives matter"',
 			function (error, stdout, stderr) {
+				var result = JSON.parse(stdout);
+				console.log(result);
+				response.send(result["text"]);
 				if (stderr !== null) {
 					console.log('stderr: ' + stderr);
-					response.status(400).send(stderr);
+					// response.status(400).send(stderr);
 				}
 				console.log('stdout: ' + stdout);
 				if (error !== null) {
 					console.log('exec error: ' + error);
-					response.status(400).send(error);
+					// response.status(400).send(error);
 				}
-				var result = JSON.parse(stdout);
-				console.log(result);
-				response.send(result["text"]);
+				
+				
 			});
 		// response.send("Hey World!");
 
