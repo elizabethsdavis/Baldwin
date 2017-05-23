@@ -86,6 +86,7 @@ if(cluster.isMaster) {
 		
 		var child;
 
+		console.log('running program...');
 		child = exec('cd ../practice && python e2e.py --query "black lives matter"',
 			function (error, stdout, stderr) {
 				if (stderr !== null) {
@@ -98,6 +99,7 @@ if(cluster.isMaster) {
 					response.status(400).send(error);
 				}
 				var result = JSON.parse(stdout);
+				console.log(result);
 				response.send(result[text]);
 			});
 		// response.send("Hey World!");
