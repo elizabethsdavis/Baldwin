@@ -87,7 +87,7 @@ if(cluster.isMaster) {
 		var child;
 
 		console.log('running program...');
-		child = exec('cd ../practice && python e2e.py --query "' + request.params.message + '"',
+		child = exec('cd ../BaldwinCharModel && python e2e.py --query "' + request.params.message + '"',
 			function (error, stdout, stderr) {
 				var result = JSON.parse(stdout);
 				console.log(result);
