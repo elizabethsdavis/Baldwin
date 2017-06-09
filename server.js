@@ -90,10 +90,10 @@ if(cluster.isMaster) {
 		console.log(request.query.message);
 		child = exec('cd ../BaldwinCharModel && python e2e.py --query "' + request.query.message + '"',
 			function (error, stdout, stderr) {
-				console.log("result", stdout);
+				//console.log("result", stdout);
 				var result = JSON.parse(stdout);
-				console.log(result);
-				response.send(result);
+				console.log(result.text);
+				response.send(result.text);
 				if (stderr !== null) {
 					console.log('stderr: ' + stderr);
 					// response.status(400).send(stderr);
