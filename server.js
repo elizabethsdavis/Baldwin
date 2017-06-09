@@ -87,9 +87,9 @@ if(cluster.isMaster) {
 		var child;
 
 		console.log('running program...');
-		child = exec('cd ../BaldwinCharModel && python e2e.py --query "' + request.params.message + '"',
+		console.log(request.query.message);
+		child = exec('cd ../BaldwinCharModel && python e2e.py --query "' + request.query.message + '"',
 			function (error, stdout, stderr) {
-
 				var result = JSON.parse(stdout);
 				console.log(result);
 				response.send(result.text);
@@ -105,23 +105,7 @@ if(cluster.isMaster) {
 				
 				
 			});
-		// child = exec('cd ../BaldwinCharModel && python e2e.py --query "' + request.params.message + '"',
-		// 	function (error, stdout, stderr) {
-		// 		var result = JSON.parse(stdout);
-		// 		console.log(result);
-		// 		response.send(result);
-		// 		if (stderr !== null) {
-		// 			console.log('stderr: ' + stderr);
-		// 			// response.status(400).send(stderr);
-		// 		}
-		// 		console.log('stdout: ' + stdout);
-		// 		if (error !== null) {
-		// 			console.log('exec error: ' + error);
-		// 			// response.status(400).send(error);
-		// 		}
-				
-				
-		// 	});
+
 		// response.send("Hey World!");
 
 	});
