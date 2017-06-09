@@ -222,7 +222,7 @@
 				TargetAttributes = {
 					C2D2AFC61ECA2564005ADB18 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 49ZR57MW8W;
+						DevelopmentTeam = C29EDA8JY5;
 						ProvisioningStyle = Automatic;
 					};
 					C2D2AFDA1ECA2564005ADB18 = {
@@ -514,7 +514,7 @@
 			baseConfigurationReference = 1284645462A9B5215B02D085 /* Pods-Baldwin.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 49ZR57MW8W;
+				DEVELOPMENT_TEAM = C29EDA8JY5;
 				INFOPLIST_FILE = Baldwin/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -529,7 +529,7 @@
 			baseConfigurationReference = 203BEE8C9905A016DF23ECB3 /* Pods-Baldwin.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 49ZR57MW8W;
+				DEVELOPMENT_TEAM = C29EDA8JY5;
 				INFOPLIST_FILE = Baldwin/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
