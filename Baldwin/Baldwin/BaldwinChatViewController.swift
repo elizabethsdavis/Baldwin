@@ -174,8 +174,8 @@ class BaldwinChatViewController: JSQMessagesViewController {
         let manager = Alamofire.SessionManager.default
         manager.session.configuration.timeoutIntervalForRequest = TimeInterval(500000);
         manager.session.configuration.timeoutIntervalForResource = TimeInterval(500000);
-        
-        manager.request("http://10.34.105.242:8000?message="+text).responseString(completionHandler: { [weak weakSelf = self] response in
+        let params:[String:AnyObject?] = ["query": text as Optional<AnyObject>]
+        manager.request("http://10.31.49.234:8888", method: .post, parameters: params).responseString(completionHandler: { [weak weakSelf = self] response in
             
             print(response);
             print("RESPONSE: ", response);
@@ -190,7 +190,7 @@ class BaldwinChatViewController: JSQMessagesViewController {
             let baldwinsResponse = response.result.value
                 
                 // TODO: insert delay (and/or typing indicator) before Baldwin's response
-                weakSelf?.messages.append((weakSelf?.makeBaldwinMessage(messageText: baldwinsResponse!))!)
+                weakSelf?.messages.append((weakSelf?.makeBaldwinMessage(messageText: baldwinsResponse ?? ""))!)
                 weakSelf?.finishSendingMessage(animated: true)
 //            }
         })
