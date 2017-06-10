@@ -174,8 +174,8 @@ class BaldwinChatViewController: JSQMessagesViewController {
         let manager = Alamofire.SessionManager.default
         manager.session.configuration.timeoutIntervalForRequest = TimeInterval(500000);
         manager.session.configuration.timeoutIntervalForResource = TimeInterval(500000);
-        let params:[String:AnyObject?] = ["query": text as Optional<AnyObject>]
-        manager.request("http://10.31.49.234:8888", method: .post, parameters: params).responseString(completionHandler: { [weak weakSelf = self] response in
+        
+        manager.request("http://10.31.49.234:8888?query="+text, method: .get).responseString(completionHandler: { [weak weakSelf = self] response in
             
             print(response);
             print("RESPONSE: ", response);
