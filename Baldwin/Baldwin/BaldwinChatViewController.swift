@@ -201,13 +201,10 @@ class BaldwinChatViewController: JSQMessagesViewController {
             
             let baldwinsResponse = response.result.value
                 
-                // TODO: insert delay (and/or typing indicator) before Baldwin's response
-                weakSelf?.messages.append((weakSelf?.makeBaldwinMessage(messageText: baldwinsResponse ?? ""))!)
+                weakSelf?.messages.append((weakSelf?.makeBaldwinMessage(messageText: baldwinsResponse ?? "Sorry, didn't understand that!"))!)
                 weakSelf?.finishSendingMessage(animated: true)
-//            }
         })
         
-        // TODO: Also see, 'receiveMessagePressed' implementation in the 'SampleChatViewController' file
     }
     
     func receiveMessagePressed(_ sender: UIBarButtonItem) {
@@ -216,6 +213,7 @@ class BaldwinChatViewController: JSQMessagesViewController {
     
     // MARK: JSQMessagesViewController method overrides
     override func didPressSend(_ button: UIButton, withMessageText text: String, senderId: String, senderDisplayName: String, date: Date) {
+        
         /**
          *  Sending a message. Your implementation of this method should do *at least* the following:
          *
@@ -231,6 +229,8 @@ class BaldwinChatViewController: JSQMessagesViewController {
     }
     
     override func didPressAccessoryButton(_ sender: UIButton) {
+        
+        /*
         self.inputToolbar.contentView!.textView!.resignFirstResponder()
         
         let sheet = UIAlertController(title: "Media messages", message: nil, preferredStyle: .actionSheet)
@@ -279,6 +279,7 @@ class BaldwinChatViewController: JSQMessagesViewController {
         sheet.addAction(cancelAction)
         
         self.present(sheet, animated: true, completion: nil)
+        */
     }
     
     func buildVideoItem() -> JSQVideoMediaItem {
