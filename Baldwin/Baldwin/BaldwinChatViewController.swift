@@ -186,7 +186,7 @@ class BaldwinChatViewController: JSQMessagesViewController {
         manager.session.configuration.timeoutIntervalForResource = TimeInterval(500000);
         let url = text.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
         
-        manager.request("http://10.31.55.120:8888?query="+(url ?? ""), method: .get).responseString(completionHandler: { [weak weakSelf = self] response in
+        manager.request("http://10.31.55.120:8888?query="+(url ?? ""), method: .get).responseJSON(completionHandler: { [weak weakSelf = self] response in
             
             weakSelf?.showTypingIndicator = false
             
@@ -199,13 +199,60 @@ class BaldwinChatViewController: JSQMessagesViewController {
             print("Actual Data: \(String(describing: response.data))")
             print("Result: \(response.result)")   // result of response serialization
             
-            
-            let baldwinsResponse = response.result.value?.replacingOccurrences(of: "\\s+$",
-                                                                               with: "",
-                                                                               options: .regularExpression)
+            print("Baldwin's response: \(response.result.value)")
+            let baldwinsResponse = response.result.value
+            if let json = response.result.value as? NSDictionary {
+                print("JSON: \(json)")
                 
-                weakSelf?.messages.append((weakSelf?.makeBaldwinMessage(messageText: baldwinsResponse ?? "Sorry, didn't understand that!"))!)
-                weakSelf?.finishSendingMessage(animated: true)
+                
+                weakSelf?.messages.append((weakSelf?.makeBaldwinMessage(messageText: (json.value(forKey:"text") as! String? ?? "Sorry, didn't understand that!")))!)
+                
+                var answer = "Based off what you said, you might also be interested in these topics: "
+                if let concepts = json.value(forKey:"concepts") as? NSArray {
+                    for i in 0 ..< concepts.count {
+                        let concept = concepts[i]
+                        answer = answer.appending(concept as! String)
+                        if i < concepts.count - 1 {
+                            answer = answer.appending(", ")
+                        }
+                        if i == concepts.count - 2 {
+                            answer = answer.appending("and ")
+                        }
+                        if i == concepts.count - 1 {
+                            answer = answer.appending(".")
+                        }
+                    }
+                }
+                
+                weakSelf?.messages.append((weakSelf?.makeBaldwinMessage(messageText: (answer)))!)
+            } else {
+                weakSelf?.messages.append((weakSelf?.makeBaldwinMessage(messageText: ("Sorry, I didn't understand that!")))!)
+            }
+            
+            weakSelf?.finishSendingMessage(animated: true)
+            
+//            if let jsonObj = response.result.value as AnyObject {
+//                if let json = jsonString as? [String:String] {
+//                    // let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: AnyObject]
+//
+//                }
+//            }
+            
+            
+            
+//            let baldwinsResponse = response.result.value?.replacingOccurrences(of: "\\s+$",
+//                                                                               with: "",
+//                                                                               options: .regularExpression)
+            
+            if baldwinsResponse != nil {
+//                weakSelf?.messages.append((weakSelf?.makeBaldwinMessage(messageText: ((baldwinsResponse!["text"] as? String?) ?? "Sorry, didn't understand that!")!))!)
+            } else {
+                
+            }
+            
+            
+        
+            
         })
         
     }
@@ -435,3 +482,31 @@ class BaldwinChatViewController: JSQMessagesViewController {
     }
     
 }
+
+extension String {
+    
+    var toDictionary: [String: Any]? {
+        if let data = self.data(using: .utf8) {
+            do {
+                return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+        return nil
+    }
+    
+//    var parseJSONString: AnyObject? {
+//        
+//        let data = self.data(using: String.Encoding.utf8, allowLossyConversion: false)
+//        
+//        if let jsonData = data {
+//            // Will return an object or nil if JSON decoding fails
+//            return JSONSerialization.jsonObject(with: jsonData, options: JSONSerialization.ReadingOptions.MutableContainers)
+//        } else {
+//            // Lossless conversion of the string was not possible
+//            return nil
+//        }
+//    }
+}
+
