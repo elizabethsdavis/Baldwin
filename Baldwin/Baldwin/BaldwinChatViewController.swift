@@ -171,11 +171,17 @@ class BaldwinChatViewController: JSQMessagesViewController {
      * TODO: incorporate message text into request end-to-end
      */
     func sendToBaldwinServer(messageText text: String) {
+        
+        // show typing indicator
+        showTypingIndicator = true
+        
         let manager = Alamofire.SessionManager.default
         manager.session.configuration.timeoutIntervalForRequest = TimeInterval(500000);
         manager.session.configuration.timeoutIntervalForResource = TimeInterval(500000);
         
         manager.request("http://10.31.49.234:8888?query="+text, method: .get).responseString(completionHandler: { [weak weakSelf = self] response in
+            
+            weakSelf?.showTypingIndicator = false
             
             print(response);
             print("RESPONSE: ", response);
