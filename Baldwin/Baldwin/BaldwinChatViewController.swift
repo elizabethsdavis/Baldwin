@@ -200,59 +200,37 @@ class BaldwinChatViewController: JSQMessagesViewController {
             print("Result: \(response.result)")   // result of response serialization
             
             print("Baldwin's response: \(response.result.value)")
-            let baldwinsResponse = response.result.value
             if let json = response.result.value as? NSDictionary {
                 print("JSON: \(json)")
                 
                 
                 weakSelf?.messages.append((weakSelf?.makeBaldwinMessage(messageText: (json.value(forKey:"text") as! String? ?? "Sorry, didn't understand that!")))!)
                 
-                var answer = "Based off what you said, you might also be interested in these topics: "
-                if let concepts = json.value(forKey:"concepts") as? NSArray {
-                    for i in 0 ..< concepts.count {
-                        let concept = concepts[i]
-                        answer = answer.appending(concept as! String)
-                        if i < concepts.count - 1 {
-                            answer = answer.appending(", ")
-                        }
-                        if i == concepts.count - 2 {
-                            answer = answer.appending("and ")
-                        }
-                        if i == concepts.count - 1 {
-                            answer = answer.appending(".")
+                if arc4random_uniform(3) == 0 { // 30% of the time, show concepts
+                    var answer = "Based off what you said, you might also be interested in these topics: "
+                    if let concepts = json.value(forKey:"concepts") as? NSArray {
+                        for i in 0 ..< concepts.count {
+                            let concept = concepts[i]
+                            answer = answer.appending(concept as! String)
+                            if i < concepts.count - 1 {
+                                answer = answer.appending(", ")
+                            }
+                            if i == concepts.count - 2 {
+                                answer = answer.appending("and ")
+                            }
+                            if i == concepts.count - 1 {
+                                answer = answer.appending(".")
+                            }
                         }
                     }
+                    
+                    weakSelf?.messages.append((weakSelf?.makeBaldwinMessage(messageText: (answer)))!)
                 }
-                
-                weakSelf?.messages.append((weakSelf?.makeBaldwinMessage(messageText: (answer)))!)
             } else {
                 weakSelf?.messages.append((weakSelf?.makeBaldwinMessage(messageText: ("Sorry, I didn't understand that!")))!)
             }
             
             weakSelf?.finishSendingMessage(animated: true)
-            
-//            if let jsonObj = response.result.value as AnyObject {
-//                if let json = jsonString as? [String:String] {
-//                    // let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: AnyObject]
-//
-//                }
-//            }
-            
-            
-            
-//            let baldwinsResponse = response.result.value?.replacingOccurrences(of: "\\s+$",
-//                                                                               with: "",
-//                                                                               options: .regularExpression)
-            
-            if baldwinsResponse != nil {
-//                weakSelf?.messages.append((weakSelf?.makeBaldwinMessage(messageText: ((baldwinsResponse!["text"] as? String?) ?? "Sorry, didn't understand that!")!))!)
-            } else {
-                
-            }
-            
-            
-        
-            
         })
         
     }
