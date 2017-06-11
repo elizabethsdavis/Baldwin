@@ -99,6 +99,12 @@ class BaldwinChatViewController: JSQMessagesViewController {
         
     }
     
+    func makeBaldwinIntroMessage() -> [JSQMessage] {
+        
+        
+        return [JSQMessage(senderId: User.Baldwin.rawValue, displayName: getName(User.Baldwin), text: "Hey! Mention something to me and I'll say what I know about it 😉")]
+    }
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -106,7 +112,7 @@ class BaldwinChatViewController: JSQMessagesViewController {
         self.navigationItem.title = "Baldwin"
         
         // Display a sample conversation (use this for reference with Baldwin)
-        messages = makeFakeBaldwinCoversation()
+        messages = makeBaldwinIntroMessage()
         
         // Setup navigation
         // setupBackButton() // remove demo back button
@@ -147,7 +153,7 @@ class BaldwinChatViewController: JSQMessagesViewController {
         self.navigationItem.rightBarButtonItem?.tintColor = UIColor(hex: "b7b6ba")
         
         // This is a beta feature that mostly works but to make things more stable it is diabled.
-        collectionView?.collectionViewLayout.springinessEnabled = false
+        collectionView?.collectionViewLayout.springinessEnabled = true
         
         automaticallyScrollsToMostRecentMessage = true
         

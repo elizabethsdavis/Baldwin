@@ -26,7 +26,7 @@
 
 "send" = "Send";
 
-"new_message" = "New Message";
+"new_message" = "New Topic";
 
 "text_message_accessibility_label" = "%@: %@";
 
