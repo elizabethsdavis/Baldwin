@@ -184,8 +184,9 @@ class BaldwinChatViewController: JSQMessagesViewController {
         let manager = Alamofire.SessionManager.default
         manager.session.configuration.timeoutIntervalForRequest = TimeInterval(500000);
         manager.session.configuration.timeoutIntervalForResource = TimeInterval(500000);
+        let url = text.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
         
-        manager.request("http://10.31.49.234:8888?query="+text, method: .get).responseString(completionHandler: { [weak weakSelf = self] response in
+        manager.request("http://10.31.55.120:8888?query="+(url ?? ""), method: .get).responseString(completionHandler: { [weak weakSelf = self] response in
             
             weakSelf?.showTypingIndicator = false
             
@@ -199,7 +200,9 @@ class BaldwinChatViewController: JSQMessagesViewController {
             print("Result: \(response.result)")   // result of response serialization
             
             
-            let baldwinsResponse = response.result.value
+            let baldwinsResponse = response.result.value?.replacingOccurrences(of: "\\s+$",
+                                                                               with: "",
+                                                                               options: .regularExpression)
                 
                 weakSelf?.messages.append((weakSelf?.makeBaldwinMessage(messageText: baldwinsResponse ?? "Sorry, didn't understand that!"))!)
                 weakSelf?.finishSendingMessage(animated: true)
