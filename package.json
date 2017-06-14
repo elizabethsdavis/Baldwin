@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/elizabethsdavis/Baldwin#readme",
   "dependencies": {
+    "angular-material": "^1.1.4",
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
     "mongodb": "^2.2.26"
