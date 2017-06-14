@@ -20,8 +20,8 @@ var text_query = function(query) {
 			smooth_list_str = ""
 			for (var i = 0; i < rough.length; i++) {
 				//rough_list_str += "<li> text: " + rough[i].text + "<br />corrected: "+rough[i].corrected + "<br />fluency score: " +rough[i].confidence+"</li>"
-				rough_list_str += "<li>" + rough[i].text + "<br />Fluency Score: <b>" + rough[i].confidence+"</b></li>"
-				smooth_list_str += "<li>" + smooth[i].text + "<br />Fluency Score: <b>" +smooth[i].confidence+"</b></li>"
+				rough_list_str += "<li>" + rough[i].text + "<br /><b> Fluency Score: " + rough[i].confidence+"</b></li>"
+				smooth_list_str += "<li>" + smooth[i].text + "<br /><b>Fluency Score: " +smooth[i].confidence+"</b></li>"
 			}
 
 			document.getElementById('rough').innerHTML = rough_list_str
