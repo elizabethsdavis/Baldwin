@@ -1,4 +1,4 @@
-IP_ADDR = "10.31.203.75:8888";
+IP_ADDR = "10.31.212.125:8888";
 
 var text_query = function(query) {
 	
