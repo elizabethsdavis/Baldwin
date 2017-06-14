@@ -63,7 +63,7 @@ class BaldwinChatViewController: JSQMessagesViewController {
     
     
     // Helper Method for getting an avatar for a specific User.
-    func getAvatar(_ id: String) -> JSQMessagesAvatarImage{
+    func getAvatar(_ id: String) -> JSQMessagesAvatarImage {
         
         let user = User(rawValue: id)!
         
@@ -186,7 +186,7 @@ class BaldwinChatViewController: JSQMessagesViewController {
         manager.session.configuration.timeoutIntervalForResource = TimeInterval(500000);
         let url = text.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
         
-        manager.request("http://10.31.55.120:8888?query="+(url ?? ""), method: .get).responseJSON(completionHandler: { [weak weakSelf = self] response in
+        manager.request("http://10.34.172.249:8888?query="+(url ?? ""), method: .get).responseJSON(completionHandler: { [weak weakSelf = self] response in
             
             weakSelf?.showTypingIndicator = false
             
