@@ -1,4 +1,4 @@
-IP_ADDR = "10.31.210.169:8888";
+IP_ADDR = "10.31.203.75:8888";
 
 var text_query = function(query) {
 	
@@ -53,7 +53,7 @@ var tweet_query = function() {
 			concepts = xhr.response.concepts
 			tweet_list_str = ""
 			for (var i = 0; i < relevant_tweets.length; i++) {
-				tweet_list_str += "<li>" + relevant_tweets[i].text + "~ @"+relevant_tweets[i].user +"</li>"
+				tweet_list_str += "<li><i>" + relevant_tweets[i].text + "</i> ~ <b>@"+relevant_tweets[i].user +"</b></li>"
 			}
 			concept_list_str = ""
 			for (var i = 0; i < concepts.length; i++) {
